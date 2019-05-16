@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body>
+
+	<div class="scene">
+		<div data-speed="10" class="layer layer-bg"></div>
+		<div data-speed="40" class="layer layer-1"></div>
+		<div data-speed="80" class="layer layer-2"></div>
+	</div>
+
+	<div class="wrapper">
+		<div class="wrapper__container">
+			<header class="header">
+				<div class="header-avatar">
+					<img src="img/avatar.jpg" alt="avatar">
+				</div>
+				<span class="header-name">Константин Травин</span>
+				<h1 class="header-title">frontend разработчик</><br>HTML-верстальщик</h1>
+				<nav class="header-nav">
+					<span id="js-card-toggle" class="header-toggle"><span></span></span>
+				</nav>
+			</header>
+
+			<section class="about" id="about">
+					<h2 class="about-title">Кто я?</h2>
+					<p class="about-text">Frontend разработчик из Санкт-Петербурга, занимаюсь созданием сайтов с 2017 года. Прошел обучение HTML верстке и курс по JavaScript в школе интернет технологий Epic Skills.</p>
+
+					<h2 class="about-title">Что я?</h2>
+					<p class="about-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus nobis quisquam accusantium non aliquid distinctio voluptas corporis dicta doloremque sed?</p>
+					
+
+					<div class="buttons">
+						<a href="" class="btn btn-portfolio">Портфолио</a>
+						<a href="" class="btn btn-contacts">Контакты</a>
+					</div>
+			</section>
+		</div>
+
+	</div>
+
+	<script src="js/scripts.min.js"></script>
+
+	<script>
+		function parallax(event) {
+			this.querySelectorAll('.layer').forEach(layer => {
+				let speed = layer.getAttribute('data-speed');
+				layer.style.transform = `translateX(${event.clientX * speed / 1000}px) translateY(${event.clientY * speed / 1000}px)`;
+			});
+		};
+		document.addEventListener('mousemove', parallax);
+		
+	</script>
+
+</body>
+
+</html>

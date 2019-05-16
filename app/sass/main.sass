@@ -1,0 +1,333 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-family: 'Oswald', sans-serif;
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	overflow: hidden
+
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+::selection
+	background-color: $accent
+	color: #fff
+
+
+.scene
+	position: fixed
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	z-index: -1;
+	overflow: hidden
+	width: 100%
+	min-height: 100vh
+
+
+.layer 
+	position: absolute
+	top: -10px
+	left: -10%
+	width: 120%
+	height: 120%
+
+
+.layer-bg
+	background: url(../img/parallax_bg.jpg)
+	background-size: cover;
+
+.layer-1
+	background: url(../img/parallax_layer1.png)
+	background-size: cover;
+
+.layer-2
+	background: url(../img/parallax_layer2.png)
+	background-size: cover;
+
+
+.wrapper
+	height: 100vh
+	position: relative
+	z-index: 100
+	text-align: center
+	display: flex
+	align-items: center
+	justify-content: center
+	overflow: hidden
+
+.wrapper__container
+	width: 500px
+	margin-top: 20%
+	overflow: hidden
+	transition: .5s
+
+	&.active
+		margin-top: 0
+
+
+
+
+.wrapper__container.active
+	width: 700px
+	background-color: rgba(255,255,255,.3)
+
+	
+
+.header 
+	width: 100%
+	position: relative
+	padding: 30px 0
+	font-size: 1.2rem
+	border-bottom: 1px solid rgba(0,0,0, 0)
+	transition: .5s
+
+.active .header
+	border-bottom: 1px solid rgba(0,0,0, .4)
+	margin-top: 0
+
+
+.header-avatar
+	position: relative
+	width: 180px
+	height: 180px
+	overflow: hidden
+	margin: 0 auto
+	backface-visibility: hidden;
+	opacity: 1;
+	transition: opacity .5s, width .5s, height .5s
+	border: 3px solid rgba(83, 53, 51,1)
+	border-radius: 100%
+	padding: 7px
+
+	& img
+		max-width: 100%	
+		height: 100%
+		border-radius: 100%	
+
+.active .header-avatar 
+	opacity: .9
+	width: 90px	
+	height: 90px
+
+.active .header-avatar:hover 
+	opacity: 1
+
+
+.header-name
+	display: block
+	margin: 15px 0
+	font-size: 2em
+	color: rgba(83, 53, 51,1)
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase
+	transition: .5s
+
+.active .header-name
+	font-size: 1.2em
+
+.header-title
+	display: block
+	font-size: 2em
+	line-height: 1.5em
+	margin-bottom: 25px
+	font-weight: 700
+	transition: font-size .5s
+	color: rgba(83, 53, 51,1)
+	letter-spacing: 2px
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase
+
+
+
+.active .front-title
+	font-size: 1.5em
+
+
+.header-nav 
+	position: relative
+	padding-bottom: 40px
+
+.header-nav ul li
+	display: inline-block
+
+.header-nav
+	display: flex
+	align-items: center
+	justify-content: center
+
+.header-toggle
+	position: relative
+	overflow: hidden
+	display: flex
+	align-items: center
+	justify-content: center
+	border: 2px solid rgba(83, 53, 51,1)
+	width: 44px
+	height: 44px
+	border-radius: 100%
+	cursor: pointer
+	transition: .5s
+
+	&:hover
+		background: rgba(83, 53, 51,.4)
+
+	& span
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		margin: auto 
+		display: block
+		width: 35px
+		height: 35px
+		border-radius: 100%
+
+		&:before
+			content: ''	
+			position: absolute 
+			top: 18px
+			right: 1px
+			margin: auto
+			display: block
+			width: 20px	
+			height: 3px
+			background-color: rgba(83, 53, 51,1)
+			transform: rotate(-45deg)
+
+		&:after
+			content: ''	
+			position: absolute
+			top: 18px
+			left: 1px
+			display: block
+			width: 20px	
+			height: 3px
+			background-color: rgba(83, 53, 51,1)
+			transform: rotate(45deg)
+
+
+.active .header-toggle
+	transform: rotate(180deg)
+
+
+
+
+
+
+.about
+	position: relative
+	height: auto
+	transform-origin: top;
+	transform: scaleY(0)
+	transition: .5s
+	padding-top: 25px
+	display: flex
+	flex-direction: column
+	height: 42vh
+
+
+.active .about
+	transform: scaleY(1)
+
+
+
+.about-title
+	margin: 0
+	margin-bottom: 20px
+	padding-left: 50px
+	text-align: left
+	font-size: 2em
+	color: rgba(83, 53, 51,1)
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase
+	
+
+.about-text
+	margin: 0
+	margin-bottom: 15px
+	padding-left: 50px
+	padding-right: 50px
+	text-align: left
+	font-size: 1.5em
+	line-height: 1.8em
+	color: rgba(83, 53, 51,1)
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase
+
+
+
+.buttons
+	position: absolute
+	left: 0
+	bottom: 0
+	display: block
+	margin-top: auto;
+	width: 100%
+	display: flex
+	transition: .6s
+
+
+.btn
+	width: 50%
+	background-color: rgba(83, 53, 51,1)
+	height: 70px
+	font-size: 1em
+	color: rgba(255, 255, 255,1)
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase
+	text-decoration: none
+	line-height: 70px
+
+
+		
+@import "media" // Всегда в конце
